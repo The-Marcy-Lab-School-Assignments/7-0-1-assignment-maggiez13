@@ -1,9 +1,15 @@
-function GifContainer() {
-    return (
-        <ul>
+import React from 'react';
 
-        </ul>
-    )
+function GifContainer({ gifs }) {
+  return (
+    <ul>
+      {gifs?.map((gif) => (
+        <li key={gif.id}>
+          <img src={gif.images.fixed_height.url} alt={gif.title} />
+        </li>
+      ))}
+    </ul>
+  );
 }
 
-export default GifContainer
+export default GifContainer;
